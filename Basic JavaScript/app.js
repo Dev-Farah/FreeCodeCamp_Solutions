@@ -441,3 +441,152 @@ myArray.unshift(["Paul", 35]);
 // Challenge 48
 // Shopping List
 const myList = [["Ice-Cream", 10], ["Water Bottles", 5], ["Pringles", 8],["Watermelon", 4], ["Honey", 2]];
+
+
+
+// Challenge 49
+// Write Reusable JavaScript with Functions
+function reusableFunction() {
+  console.log("Hi World");
+}
+reusableFunction();
+
+
+
+// Challenge 50
+// Passing Values to Functions with Arguments
+function functionWithArgs(param1, param2) {
+  console.log(param1 + param2);
+}
+functionWithArgs(1, 2);
+functionWithArgs(7, 9);
+
+
+
+// Challenge 51
+// Return a Value from a Function with Return
+function timesFive(num) {
+  return num * 5;
+}
+timesFive(5);
+timesFive(2);
+timesFive(0);
+
+
+
+// Challenge 52
+// Global Scope and Functions
+// Declare the myGlobal variable below this line
+let myGlobal;
+myGlobal = 10;
+var oopsGlobal;
+function fun1() {
+  // Assign 5 to oopsGlobal Here
+  oopsGlobal = 5;
+}
+
+// Only change code above this line
+
+function fun2() {
+  var output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+
+
+
+// Challenge 53
+// Local Scope and Functions
+function myLocalScope() {
+  // Only change code below this line
+let myVar;
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+
+
+
+// Challenge 54
+// Global vs. Local Scope in Functions
+// Setup
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+  // Only change code below this line
+const outerWear = "sweater";
+  // Only change code above this line
+  return outerWear;
+}
+
+myOutfit();
+
+
+
+// Challenge 55
+// Understanding Undefined Value returned from a Function
+// Setup
+let sum = 0;
+
+function addThree() {
+  sum = sum + 3;
+}
+
+// Only change code below this line
+function addFive() {
+  sum = sum + 5;
+}
+
+// Only change code above this line
+
+addThree();
+addFive();
+
+
+
+// Challenge 56
+// Assignment with a Returned Value
+// Setup
+let processed = 0;
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+// Only change code below this line
+processArg(7);
+processed = processArg(7);
+console.log(processed);
+
+
+
+// Challenge 57
+// Stand in Line
+function nextInLine(arr, item) {
+  // Only change code below this line
+  arr.push(item);
+  var removed = arr.shift();
+  return removed;
+  // Only change code above this line
+}
+
+// Setup
+const testArr = [1, 2, 3, 4, 5];
+
+// Display code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+console.log(nextInLine([], 5));
+console.log(nextInLine([], 1));
+console.log(nextInLine([2], 1));
+console.log(nextInLine([5, 6, 7, 8, 9], 1));
+console.log(nextInLine(testArr, 10), testArr[4]);
