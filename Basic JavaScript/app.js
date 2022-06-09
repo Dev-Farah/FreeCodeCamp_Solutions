@@ -1542,3 +1542,56 @@ function convertToInteger(str) {
  }
  
  convertToInteger("10011");
+
+
+
+ // Challenge 110
+ //  Use the Conditional (Ternary) Operator
+ function checkEqual(a, b) {
+   return a === b ? "Equal" : "Not Equal";
+ }
+ 
+ checkEqual(1, 2);
+ 
+ 
+ 
+ // Challenge 111
+ // Use Multiple Conditional (Ternary) Operators
+ function checkSign(num) {
+   return (num > 0) ? "positive"
+   : (num < 0) ? "negative"
+   :"zero";
+ }
+ 
+ checkSign(10);
+ 
+ 
+ 
+ // Challenge 112
+ // Use Recursion to Create a Countdown
+ // Only change code below this line
+ function countdown(n) {
+   if (n < 1) {
+     return [];
+   } else {
+     const countArray = countdown(n - 1);
+     countArray.unshift(n);
+     return countArray;
+   }
+ }
+ // Only change code above this line
+ 
+ 
+ 
+ // Challenge 113
+ // Use Recursion to Create a Range of Numbers
+ function rangeOfNumbers(startNum, endNum) {
+   if (startNum > endNum) {
+     return [];
+   } else {
+     let numbers = rangeOfNumbers(startNum, endNum - 1);
+     numbers.push(endNum);
+     return numbers;
+   };
+ };
+ console.log(rangeOfNumbers(25, 35));
